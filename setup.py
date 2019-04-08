@@ -5,5 +5,7 @@ setup(
     packages=['pygur',],
     license='MIT License',
     install_requires=['aiohttp', 'dacite',]
-    long_description='''An Python Imgur Wrapper implementing Asynchronous Programming using Asyncio''',
+    long_description=open('README.md').read(),
+    author='Dylee',
+    author_email='dylee@mewbot.me',
 )
