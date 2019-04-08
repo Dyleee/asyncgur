@@ -4,7 +4,9 @@
 
 
 *Example Usage:*
-```client_id = 'YOUR_IMGUR_CLIENT_ID'
+`
+from pygur import Imgur
+client_id = 'YOUR_IMGUR_CLIENT_ID'
 app = Imgur(client_id)
 
 async def main():
@@ -13,4 +15,4 @@ async def main():
     print(image)
 
 loop = asyncio.get_event_loop()
-loop.run_until_complete(main())```
+loop.run_until_complete(main())`
