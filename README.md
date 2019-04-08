@@ -1,11 +1,11 @@
-# pygur
+# asyncgur
 
-> An Asyncio Imgur Wrapper to upload or get an image for Python
+> An Asynchronous Imgur Wrapper to upload or get an image for Python
 
 
 *Example Usage:*
 ```
-from pygur import Imgur
+from asyncgur import Imgur
 client_id = 'YOUR_IMGUR_CLIENT_ID'
 imgur_app = Imgur(client_id)
 
