@@ -4,7 +4,7 @@
 
 
 *Example Usage:*
-```
+```python
 from asyncgur import Imgur
 client_id = 'YOUR_IMGUR_CLIENT_ID'
 imgur_app = Imgur(client_id)
