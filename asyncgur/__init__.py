@@ -1,2 +1,2 @@
 
-from . import *
+from .pygur import Imgur
