@@ -1,4 +1,4 @@
-[![](https://img.shields.io/pypi/v/asyncgur.svg)](https://pypi.org/project/asyncgur/)
+[![](https://img.shields.io/pypi/v/asyncgur.svg)](https://pypi.org/project/asyncgur/) [![](https://img.shields.io/pypi/dm/asyncgur.svg?style=plastic)](https://pypi.org/project/asyncgur/) [![](https://img.shields.io/github/license/Dyleee/asyncgur.svg?style=plastic)](https://pypi.org/project/asyncgur/) [![](https://img.shields.io/github/stars/Dyleee/asyncgur.svg?style=plastic)](https://pypi.org/project/asyncgur/)
 
 # asyncgur
 
