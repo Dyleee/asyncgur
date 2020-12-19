@@ -75,7 +75,7 @@ class Imgur:
             'video': video
         }
 
-        response = await self.post_request(f'https://api.imgur.com/3/upload', payload)
+        response = await self.post_request(f'https://api.imgur.com/3/image', payload)
         image_data = dacite.from_dict(data_class=Image_info, data=response['data'])
         api_response = dacite.from_dict(data_class=Response, data=response)
         return image_data, api_response
