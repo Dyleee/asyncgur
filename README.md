@@ -1,3 +1,5 @@
+[![](https://img.shields.io/pypi/v/asyncgur.svg)](https://pypi.org/project/asyncgur/)
+
 # asyncgur
 
 > An Asynchronous Imgur Wrapper to upload or get an image for Python
