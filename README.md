@@ -2,7 +2,7 @@
 
 # asyncgur
 
-> An Asynchronous Imgur Wrapper to upload or get an image for Python
+> An Asynchronous Imgur Wrapper for Python
 
 
 *Example Usage:*
