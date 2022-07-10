@@ -5,7 +5,7 @@
 > An Asynchronous Imgur Wrapper for Python
 
 
-*Example Usage:*
+*Example Usage:* 
 ```python
 from asyncgur import Imgur
 client_id = 'YOUR_IMGUR_CLIENT_ID'
@@ -18,3 +18,6 @@ async def main():
 
 loop = asyncio.get_event_loop()
 loop.run_until_complete(main())
+```
+
+> See misc/examples for more usecases.

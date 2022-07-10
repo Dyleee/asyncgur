@@ -1,10 +1,12 @@
 import json
-import asyncio
 from typing import Any
 from dataclasses import dataclass
 
 import dacite
 import aiohttp
+
+from enums import PayloadData
+
 
 @dataclass
 class Image_info:
@@ -48,34 +50,47 @@ class Response:
 class Imgur:
     def __init__(self, client_id):
         self.client_id = client_id
-        self.headers = {
-            'Authorization' : f'Client-ID {self.client_id}'
-        }
+        self.headers = {"Authorization": f"Client-ID {self.client_id}"}
 
     async def get_request(self, url, payload=None):
-        async with aiohttp.request('get', url, headers=self.headers, data=payload) as resp:
+        async with aiohttp.request(
+            "get", url, headers=self.headers, data=payload
+        ) as resp:
             resp.raise_for_status
             return json.loads(await resp.text())
 
     async def post_request(self, url, payload):
-        async with aiohttp.request('post', url, headers=self.headers, data=payload) as resp:
+        async with aiohttp.request(
+            "post", url, headers=self.headers, data=payload
+        ) as resp:
             resp.raise_for_status
             return json.loads(await resp.text())
 
     async def get_image(self, image_hash):
-        response = await self.get_request(f'https://api.imgur.com/3/image/{image_hash}')
+        response = await self.get_request(f"https://api.imgur.com/3/image/{image_hash}")
         return response
 
-    async def upload_image(self, title=None, description=None, name=None, image=None, video=None):
-        payload = {
-            'title': title,
-            'description': description,
-            'name': name,
-            'image': image,
-            'video': video
-        }
+    async def upload_image(
+        self,
+        title: str = None,
+        description: str = None,
+        name: str = None,
+        image: str = None,
+        video: str = None,
+    ):
+        """
+        Uploads an Image to Imgur API using the provided Client ID.
 
-        response = await self.post_request(f'https://api.imgur.com/3/image', payload)
-        image_data = dacite.from_dict(data_class=Image_info, data=response['data'])
+        :param title
+        :param description
+        :param name
+        :param image: must be a url or bytes.
+        :param video: must be bytes.
+        """
+        payload = PayloadData(
+            title=title, description=description, name=name, image=image, video=video
+        ).payload
+        response = await self.post_request(f"https://api.imgur.com/3/image", payload)
+        image_data = dacite.from_dict(data_class=Image_info, data=response["data"])
         api_response = dacite.from_dict(data_class=Response, data=response)
         return image_data, api_response
