@@ -1,5 +1,5 @@
 from io import BytesIO
-from pygur import Imgur
+from asyncgur import Imgur
 from PIL import Image
 
 import numpy
